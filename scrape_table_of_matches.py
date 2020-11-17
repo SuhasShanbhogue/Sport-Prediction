@@ -3,7 +3,8 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 import tqdm
-
+from pathlib import Path
+data_folder = Path("./Data/")
 #dataDict = dict()
 #dataPDict = dict()
 
@@ -47,7 +48,7 @@ def weightschef(shape,decay=0.9):
 import csv
 import numpy as np
 
-def dataChef(dataDict,dataPDict,file1name="links_2011.csv",file2name="innovators_2011.csv",file3name="warriors_2011.csv",decay=0.9):
+def dataChef(dataDict,dataPDict,file1name="./Data/links_2011.csv",file2name="./Data/innovators_2011.csv",file3name="./Data/swarriors_2011.csv",decay=0.9):
 
   dflinks = pd.read_csv(file1name)
  
@@ -243,7 +244,7 @@ def scrapeData(decay=0.9):
     print(i+" will be scraped now.")
     dataDict = dict()
     dataPDict = dict()
-    dataChef(dataDict,dataPDict,"links_"+i+".csv","team_"+i+".csv","players_"+i+".csv",decay)
+    dataChef(dataDict,dataPDict,"./Data/links_"+i+".csv","./Data/team_"+i+".csv","./Data/players_"+i+".csv",decay)
 
 
 if __name__ == "__main__":
