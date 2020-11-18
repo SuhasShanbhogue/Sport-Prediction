@@ -7,8 +7,8 @@ import tqdm
 
 def balanceClass():
 	for year in tqdm.tqdm(["2011","2012","2013","2014","2015"]):
-		df = pd.read_csv("./Data/players_"+year+".csv")
-		df1 = pd.read_csv("./Data/team_"+year+".csv")
+		df = pd.read_csv("../Data/players_"+year+".csv")
+		df1 = pd.read_csv("../Data/team_"+year+".csv")
 		assert len(df.index) == len(df1.index) , "check the Files"
 		assert df1['winner'].sum() ==  df["Winner"].sum() , "check the files"
 		ones = df1['winner'].sum()
