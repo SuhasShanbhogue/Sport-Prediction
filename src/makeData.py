@@ -1,8 +1,9 @@
-import scraper_links_of_matches as linkscrape
-import scrape_table_of_matches as tablescrape
+import scrape_links_from_webpage as linkscrape
+import scrape_table_from_links as tablescrape
 import tqdm
 import argparse
 from balanceClass import balanceClass
+import players_final_dataset_generation as makePlayers
 
 def main(decay=0.9):
   print("Data Scraping begins")
@@ -15,6 +16,7 @@ def main(decay=0.9):
   print("Lets balance the Data now")
   balanceClass()
   print("Balancing algorithm finished execution")
+  makePlayers()
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description=' Add the decay')

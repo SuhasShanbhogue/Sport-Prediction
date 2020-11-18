@@ -4,7 +4,7 @@ import re
 import csv
 import tqdm 
 from pathlib import Path
-data_folder = Path("./Data/")
+data_folder = Path("../Data/")
 def getData(yearNumber):
     URL = f"http://fs.ncaa.org/Docs/stats/w_volleyball_champs_records/{str(2010 + yearNumber)}/d1/html/confstat.htm"
     page = requests.get(URL)
